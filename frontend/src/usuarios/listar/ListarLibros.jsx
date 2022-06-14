@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { delBooks, getBooks } from "../requests";
 import {
@@ -34,7 +33,7 @@ const ListarLibros = () => {
     title: "",
     body: "",
   });
-  const selectBooks = (values, caso) => {
+  const selectBooks = (values) => {
     setSelectBook(values);
     console.log(values);
     setModalOpen(true);
@@ -42,9 +41,7 @@ const ListarLibros = () => {
   return (
     <Container>
       <br />
-      <NavLink to="../crearusuario">
-        <Button className="btn btn-success">Create</Button>
-      </NavLink>
+      <input placeholder="Search" type="text" className="form-control" />
       <br />
       <Table className="table table-bordered">
         <thead>
